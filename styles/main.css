@@ -1,0 +1,263 @@
+/* ------------------------------- GENERAL ------------------------------- */
+:root {
+	--bg-primary: #f6f8ff;
+	--bg-secondary: #fefefe;
+	--color-accent: #0079ff;
+	--color-grayish-blue: #4b6a9b;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+	display: none;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: 'Space Mono', sans-serif;
+	background-color: var(--bg-primary);
+}
+
+a {
+	color: unset;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+}
+
+a:link:hover,
+a:link:focus,
+a:visited:hover,
+a:visited:focus {
+	text-decoration: underline;
+}
+
+ul {
+	list-style: none;
+}
+
+button,
+input {
+	font: inherit;
+	border: none;
+	outline: none;
+}
+
+@media (max-width: 750px) {
+	html {
+		font-size: 56.25%;
+	}
+}
+
+/* ------------------------------- UTILITY CLASSES ------------------------------- */
+.flex {
+	--gap: 1.8rem;
+
+	display: flex;
+	align-items: center;
+	gap: var(--gap);
+}
+
+.flex.justify-between {
+	justify-content: space-between;
+}
+
+.flex.column {
+	flex-direction: column;
+}
+
+.text-muted {
+	opacity: 0.5;
+}
+
+.container {
+	max-width: 120rem;
+	margin: 12.8rem auto 6.4rem auto;
+	padding-inline: 3.2rem;
+}
+
+.card {
+	border-radius: 15px;
+	padding: 4.8rem;
+
+	background-color: var(--bg-secondary);
+	box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
+}
+
+@media (max-width: 600px) {
+	.container {
+		padding-inline: 2.4rem;
+	}
+
+	.card {
+		padding: 3.2rem;
+	}
+}
+
+/* ------------------------------- SECTION INTRO ------------------------------- */
+.profile-intro {
+	max-width: 75rem;
+
+	display: grid;
+	gap: 3.2rem;
+	grid-template-columns: auto 1fr;
+}
+
+.profile-intro--img {
+	border-radius: 100px;
+	max-width: 120px;
+}
+
+.profile-intro--title {
+	font-size: 2.4rem;
+	font-weight: 700;
+	color: #333;
+
+	margin-bottom: 0.2rem;
+}
+
+.profile-intro--username:link,
+.profile-intro--username:visited {
+	color: var(--color-accent);
+}
+
+.profile-intro--bio {
+	color: var(--color-grayish-blue);
+	opacity: 0.75;
+
+	margin-block: 2.2rem 3.2rem;
+}
+
+.profile-intro--links {
+	display: grid;
+	gap: 1.6rem 3.2rem;
+	grid-template-columns: repeat(2, 200px);
+}
+
+.profile-intro--link a {
+	color: var(--color-grayish-blue);
+}
+
+@media (max-width: 680px) {
+	.profile-intro {
+		grid-template-columns: 100%;
+		text-align: center;
+	}
+
+	.profile-intro--links {
+		grid-template-columns: 100%;
+		gap: 1.6rem 3.6rem;
+	}
+
+	.profile-intro--link {
+		justify-content: center;
+	}
+}
+
+/* ------------------------------- SECTION REPOS ------------------------------- */
+.profile-repos {
+	margin-top: 9.6rem;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+	gap: 3.2rem;
+}
+
+.profile-repos .card {
+	padding: 3.2rem 4.8rem;
+}
+
+.profile-repo--title {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--color-accent);
+}
+
+.profile-repo--description {
+	color: var(--color-grayish-blue);
+	margin-block: 1.2rem 2.4rem;
+}
+
+.profile-repo--tags {
+	--gap: 8px;
+	flex-wrap: wrap;
+}
+
+.profile-repo--tags span {
+	display: inline-block;
+	padding: 0.4rem 0.8rem;
+	border-radius: 3px;
+
+	background-color: #91a7ff;
+	color: var(--bg-secondary);
+	font-size: 1.4rem;
+}
+
+@media (max-width: 600px) {
+	.profile-repos {
+		grid-template-columns: auto;
+	}
+
+	.profile-repos .card {
+		padding: 2.4rem 3.2rem;
+	}
+}
+
+/* ------------------------------- PAGINATION ------------------------------- */
+.pagination {
+	margin-top: 10rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pagination .card {
+	padding: 1.6rem;
+	border-radius: 8px;
+}
+
+.pagination-list {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.pagination-number {
+	padding: 2px 10px;
+	border-radius: 3px;
+	cursor: pointer;
+	user-select: none;
+	color: #333;
+}
+
+.pagination-number.active {
+	background: var(--color-accent);
+	color: var(--bg-secondary);
+}
+
+.pagination-list svg {
+	width: 14px;
+	height: 14px;
+	fill: var(--color-accent);
+	cursor: pointer;
+}
+
+@media (max-width: 600px) {
+	.pagination-list {
+		gap: 1rem;
+	}
+}
