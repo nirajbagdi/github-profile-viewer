@@ -1,0 +1,16 @@
+{
+	"name": "assignment",
+	"version": "1.0.0",
+	"description": "GitHub Profile and Repos",
+	"default": "index.html",
+	"scripts": {
+		"start": "parcel index.html",
+		"build": "parcel build index.html --dist-dir ./dist"
+	},
+	"keywords": [],
+	"author": "Niraj Bagdi",
+	"license": "ISC",
+	"devDependencies": {
+		"parcel": "^2.11.0"
+	}
+}
