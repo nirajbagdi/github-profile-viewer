@@ -1,8 +1,13 @@
-import { BASE_URL, GITHUB_USERNAME } from './config.js';
+import { BASE_URL, GITHUB_USERNAME, RESULTS_PER_PAGE } from './config.js';
 import { AJAX } from './helpers.js';
 
 export const state = {
 	profile: null,
+
+	page: {
+		pageNum: 1,
+		hasNextPage: true,
+	},
 };
 
 async function getUserData() {
@@ -28,9 +33,11 @@ async function getUserData() {
 	}
 }
 
-async function getReposData() {
+async function getReposData(pageNum) {
 	try {
-		const data = await AJAX(`${BASE_URL}/${GITHUB_USERNAME}/repos`);
+		const data = await AJAX(
+			`${BASE_URL}/${GITHUB_USERNAME}/repos?page=${pageNum}&per_page=${RESULTS_PER_PAGE}`
+		);
 
 		const normalizedData = data.map(repo => ({
 			id: repo.id,
@@ -46,12 +53,16 @@ async function getReposData() {
 	}
 }
 
-export async function getProfileData() {
+export async function getProfileData(pageNum = 1) {
 	try {
-		const userData = await Promise.all([getUserData(), getReposData()]);
+		const userData = await Promise.all([getUserData(), getReposData(pageNum)]);
 		const [user, repos] = userData;
 
+		const nextRepos = await getReposData(pageNum + 1);
+		const hasNextPage = nextRepos.length !== 0;
+
 		state.profile = { ...user, repos };
+		state.page = { pageNum, hasNextPage };
 	} catch (error) {
 		throw error;
 	}

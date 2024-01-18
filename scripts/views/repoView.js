@@ -4,10 +4,6 @@ class RepoView extends View {
 	_parentEl = document.querySelector('.profile-repos');
 	_errorMsg = 'No Repos Found';
 
-	renderOn(handler) {
-		window.addEventListener('load', handler);
-	}
-
 	_generateMarkup() {
 		const repoMarkup = repo =>
 			`<div class="card profile-repo">

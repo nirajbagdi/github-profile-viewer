@@ -4,7 +4,7 @@ class ProfileView extends View {
 	_parentEl = document.querySelector('.profile-intro');
 	_errorMsg = 'Profile not found';
 
-	renderOn(handler) {
+	addHandlerRender(handler) {
 		window.addEventListener('load', handler);
 	}
 
