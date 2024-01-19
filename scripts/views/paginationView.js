@@ -6,7 +6,7 @@ class PaginationView extends View {
 	addHandlerClick(handler) {
 		this._parentEl.addEventListener('click', event => {
 			const targetBtn = event.target.closest('li');
-			if (!targetBtn) return;
+			if (!targetBtn || !targetBtn.dataset.goto) return;
 
 			handler(+targetBtn.dataset.goto);
 		});
