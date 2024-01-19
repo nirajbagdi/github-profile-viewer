@@ -97,6 +97,44 @@ input {
 	box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
+.spinner {
+	margin-inline: auto;
+	text-align: center;
+	max-width: 100%;
+	grid-column: 1/-1;
+}
+
+.spinner svg {
+	width: 5rem;
+	height: 5rem;
+	fill: #91a7ff;
+	animation: rotate 2s infinite linear;
+}
+
+.error {
+	--gap: 1.8rem;
+	color: #ff8787;
+	text-align: center;
+	margin-inline: auto;
+	grid-column: 1/-1;
+}
+
+.error svg {
+	width: 3rem;
+	height: 3rem;
+	fill: #ff8787;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 @media (max-width: 600px) {
 	.container {
 		padding-inline: 2.4rem;
@@ -110,6 +148,7 @@ input {
 /* ------------------------------- SECTION INTRO ------------------------------- */
 .profile-intro {
 	max-width: 75rem;
+	margin-inline: auto;
 
 	display: grid;
 	gap: 3.2rem;

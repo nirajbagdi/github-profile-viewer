@@ -1,3 +1,5 @@
+import icons from '../../img/icons.svg';
+
 export default class View {
 	_data;
 
@@ -12,14 +14,27 @@ export default class View {
 	}
 
 	renderSpinner() {
-		const markup = `<div class="spinner">Loading...</div>`;
+		const markup = `
+            <div class="spinner">
+                <svg>
+                    <use href="${icons}#icon-loader"></use>
+                </svg>
+            </div>
+        `;
 
 		this._clear();
 		this._parentEl.insertAdjacentHTML('afterbegin', markup);
 	}
 
-	renderError(errorMsg = 'Something went wrong') {
-		const markup = `<div class="error">${errorMsg}</div>`;
+	renderError(errorMsg) {
+		const markup = `
+            <div class="error flex">
+                <svg>
+                    <use href="${icons}#icon-alert-triangle"></use>
+                </svg>
+                ${this._errorMsg || errorMsg}
+            </div>
+        `;
 
 		this._clear();
 		this._parentEl.insertAdjacentHTML('afterbegin', markup);
