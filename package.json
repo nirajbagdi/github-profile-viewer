@@ -1,7 +1,7 @@
 {
-	"name": "assignment",
+	"name": "repo-listings",
 	"version": "1.0.0",
-	"description": "GitHub Profile and Repos",
+	"description": "GitHub Profile and Repo Listings",
 	"default": "index.html",
 	"scripts": {
 		"start": "parcel index.html",
