@@ -169,7 +169,7 @@ input {
 
 /* ------------------------------- SECTION REPOS ------------------------------- */
 .profile-repos {
-	margin-top: 9.6rem;
+	margin-top: 2.4rem;
 
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
@@ -260,4 +260,29 @@ input {
 	.pagination-list {
 		gap: 1rem;
 	}
+}
+
+.repo-input-per-page {
+	margin-top: 9.6rem;
+}
+
+.repo-input-per-page label {
+	color: #333;
+}
+
+.repo-input-per-page input {
+	box-shadow: 0 0 0 2px #aaa;
+	padding: 4px 8px;
+	border-radius: 8px;
+	transition: all 0.3s;
+}
+
+.repo-input-per-page input::-webkit-outer-spin-button,
+.repo-input-per-page input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+.repo-input-per-page input:focus,
+.repo-input-per-page input:active {
+	box-shadow: 0 0 0 2px var(--color-grayish-blue);
 }

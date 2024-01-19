@@ -7,6 +7,7 @@ export const state = {
 	page: {
 		pageNum: 1,
 		hasNextPage: true,
+		resultsPerPage: RESULTS_PER_PAGE,
 	},
 };
 
@@ -33,10 +34,10 @@ async function getUserData() {
 	}
 }
 
-async function getReposData(pageNum) {
+async function getReposData(pageNum, reposPerPage) {
 	try {
 		const data = await AJAX(
-			`${BASE_URL}/${GITHUB_USERNAME}/repos?page=${pageNum}&per_page=${RESULTS_PER_PAGE}`
+			`${BASE_URL}/${GITHUB_USERNAME}/repos?page=${pageNum}&per_page=${reposPerPage}`
 		);
 
 		const normalizedData = data.map(repo => ({
@@ -53,16 +54,19 @@ async function getReposData(pageNum) {
 	}
 }
 
-export async function getProfileData(pageNum = 1) {
+export async function getProfileData(
+	pageNum = state.page.pageNum,
+	reposPerPage = state.page.resultsPerPage
+) {
 	try {
-		const userData = await Promise.all([getUserData(), getReposData(pageNum)]);
+		const userData = await Promise.all([getUserData(), getReposData(pageNum, reposPerPage)]);
 		const [user, repos] = userData;
 
-		const nextRepos = await getReposData(pageNum + 1);
+		const nextRepos = await getReposData(pageNum + 1, reposPerPage);
 		const hasNextPage = nextRepos.length !== 0;
 
 		state.profile = { ...user, repos };
-		state.page = { pageNum, hasNextPage };
+		state.page = { pageNum, hasNextPage, resultsPerPage: reposPerPage };
 	} catch (error) {
 		throw error;
 	}
