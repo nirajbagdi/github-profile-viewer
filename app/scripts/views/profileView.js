@@ -1,5 +1,5 @@
 import View from './View.js';
-import icons from '../../assets/icons.svg';
+import icons from 'url:../../assets/icons.svg';
 
 class ProfileView extends View {
 	_parentEl = document.querySelector('.profile');

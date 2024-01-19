@@ -1,4 +1,4 @@
-import icons from '../../assets/icons.svg';
+import icons from 'url:../../assets/icons.svg';
 
 export default class View {
 	_data;
