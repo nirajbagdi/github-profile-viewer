@@ -145,8 +145,8 @@ input {
 	}
 }
 
-/* ------------------------------- SECTION INTRO ------------------------------- */
-.profile-intro {
+/* ------------------------------- SECTION PROFILE ------------------------------- */
+.profile {
 	max-width: 75rem;
 	margin-inline: auto;
 
@@ -155,12 +155,12 @@ input {
 	grid-template-columns: auto 1fr;
 }
 
-.profile-intro--img {
+.profile-img-col img {
 	border-radius: 100px;
 	max-width: 120px;
 }
 
-.profile-intro--title {
+.profile-title {
 	font-size: 2.4rem;
 	font-weight: 700;
 	color: #333;
@@ -168,40 +168,40 @@ input {
 	margin-bottom: 0.2rem;
 }
 
-.profile-intro--username:link,
-.profile-intro--username:visited {
+.profile-username:link,
+.profile-username:visited {
 	color: var(--color-accent);
 }
 
-.profile-intro--bio {
+.profile-bio {
 	color: var(--color-grayish-blue);
 	opacity: 0.75;
 
 	margin-block: 2.2rem 3.2rem;
 }
 
-.profile-intro--links {
+.profile-links {
 	display: grid;
 	gap: 1.6rem 3.2rem;
 	grid-template-columns: repeat(2, minmax(200px, auto));
 }
 
-.profile-intro--link a {
+.profile-link-item a {
 	color: var(--color-grayish-blue);
 }
 
 @media (max-width: 680px) {
-	.profile-intro {
+	.profile {
 		grid-template-columns: 100%;
 		text-align: center;
 	}
 
-	.profile-intro--links {
+	.profile-links {
 		grid-template-columns: 100%;
 		gap: 1.6rem 3.6rem;
 	}
 
-	.profile-intro--link {
+	.profile-link-item {
 		justify-content: center;
 	}
 }
@@ -324,4 +324,12 @@ input {
 .repo-input-per-page input:focus,
 .repo-input-per-page input:active {
 	box-shadow: 0 0 0 2px var(--color-grayish-blue);
+}
+
+#icon-location,
+#icon-twitter,
+#icon-blog,
+#icon-company {
+	width: 22px;
+	height: 20px;
 }
