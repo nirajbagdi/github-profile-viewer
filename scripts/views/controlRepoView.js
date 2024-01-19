@@ -1,7 +1,7 @@
 import View from './View.js';
 
 class ControlRepoView extends View {
-	_parentEl = document.querySelector('.repo-input-per-page');
+	_parentEl = document.querySelector('.repo-control');
 
 	addHandlerControl(handler) {
 		this._parentEl.addEventListener('change', event => {

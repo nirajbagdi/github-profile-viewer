@@ -207,7 +207,7 @@ input {
 }
 
 /* ------------------------------- SECTION REPOS ------------------------------- */
-.profile-repos {
+.repos {
 	margin-top: 2.4rem;
 
 	display: grid;
@@ -215,27 +215,27 @@ input {
 	gap: 3.2rem;
 }
 
-.profile-repos .card {
+.repos .card {
 	padding: 3.2rem 4.8rem;
 }
 
-.profile-repo--title {
+.repo-title {
 	font-size: 2rem;
 	font-weight: 700;
 	color: var(--color-accent);
 }
 
-.profile-repo--description {
+.repo-description {
 	color: var(--color-grayish-blue);
 	margin-block: 1.2rem 2.4rem;
 }
 
-.profile-repo--tags {
+.repo-tags {
 	--gap: 8px;
 	flex-wrap: wrap;
 }
 
-.profile-repo--tags span {
+.repo-tags span {
 	display: inline-block;
 	padding: 0.4rem 0.8rem;
 	border-radius: 3px;
@@ -246,11 +246,11 @@ input {
 }
 
 @media (max-width: 600px) {
-	.profile-repos {
+	.repos {
 		grid-template-columns: auto;
 	}
 
-	.profile-repos .card {
+	.repos .card {
 		padding: 2.4rem 3.2rem;
 	}
 }
@@ -301,28 +301,28 @@ input {
 	}
 }
 
-.repo-input-per-page {
+.repo-control {
 	margin-top: 9.6rem;
 }
 
-.repo-input-per-page label {
+.repo-control label {
 	color: #333;
 }
 
-.repo-input-per-page input {
+.repo-control input {
 	box-shadow: 0 0 0 2px #aaa;
 	padding: 4px 8px;
 	border-radius: 8px;
 	transition: all 0.3s;
 }
 
-.repo-input-per-page input::-webkit-outer-spin-button,
-.repo-input-per-page input::-webkit-inner-spin-button {
+.repo-control input::-webkit-outer-spin-button,
+.repo-control input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 }
 
-.repo-input-per-page input:focus,
-.repo-input-per-page input:active {
+.repo-control input:focus,
+.repo-control input:active {
 	box-shadow: 0 0 0 2px var(--color-grayish-blue);
 }
 

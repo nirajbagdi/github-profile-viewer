@@ -1,30 +1,31 @@
 import View from './View.js';
 
 class RepoView extends View {
-	_parentEl = document.querySelector('.profile-repos');
+	_parentEl = document.querySelector('.repos');
 	_errorMsg = 'No Repos Found';
 
 	_generateMarkup() {
 		const repoMarkup = repo =>
-			`<div class="card profile-repo">
+			`<article class="card repo">
                 <header>
-                    <a
-                        class="profile-repo--title"
-                        href="${repo.htmlUrl}"
-                        target="_blank"
-                    >
-                        ${repo.name}
-                    </a>
+                    <h2 class="repo-title">
+                        <a
+                            href="${repo.htmlUrl}"
+                            target="_blank"
+                        >
+                            ${repo.name}
+                        </a>
+                    </h2>
     
-                    <p class="profile-repo--description">
+                    <p class="repo-description">
                         ${repo.description || 'This profile has no description'}
                     </p>
                 </header>
     
-                <div class="profile-repo--tags flex">
+                <div class="repo-tags flex">
                     ${repo.topics.map(topic => `<span>${topic}</span>`).join('')}
                 </div>
-            </div>`;
+            </article>`;
 
 		return this._data.repos.map(repoMarkup).join('');
 	}
