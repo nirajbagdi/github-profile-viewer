@@ -2,6 +2,8 @@
 
 GitHub Profile Viewer is a web application built with HTML, CSS, and JavaScript using the Parcel bundler. It leverages the Model-View-Controller (MVC) architecture for clean code organization. The application provides an intuitive and interactive way to explore GitHub profiles and their public repositories.
 
+The idea of this project was to put my MVC skills to work 😉.
+
 ## Live Demo
 
 A live demo of the application is hosted at [https://github-profile-viewer-v2.netlify.app](https://github-profile-viewer-v2.netlify.app/)
